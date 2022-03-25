@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const controllerUser = require("../controllers/user");
+const Masterly = require("../controllers/masterly");
 
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
@@ -13,6 +13,6 @@ router.get('/', function (req, res) {
     res.send('Endpoint to aya-crypt');
 });
 // Rotas para retornar os dados do usuário
-router.get('/user/:username', controllerUser.getUser);
+router.get('/masterly', Masterly);
 
 module.exports = router;
